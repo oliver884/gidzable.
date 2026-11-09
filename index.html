@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gidzable – Farm Fresh, Straight From The Farmer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g1:#0b4a26;--g2:#15803d;--g3:#86e04a;--bg:#f7faf6;--card:#fff;--tx:#10281a;--mut:#4a6354;--yel:#f2a900;--org:#0b4a26;--bd:#d9e6d6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#06140b;--card:#0f2617;--tx:#f2fff2;--mut:#a9c9b3;--bd:#1f4d2e;--org:#86e04a}}
+:root[data-theme=dark]{--org:#86e04a;--bg:#06140b;--card:#0f2617;--tx:#f2fff2;--mut:#a9c9b3;--bd:#1f4d2e}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box;margin:0}
+body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--g1);z-index:60}
+.w{max-width:1160px;margin:auto;padding:0 18px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--g1);color:#fff;box-shadow:0 4px 18px #0004}
+.nav{display:flex;align-items:center;gap:14px;padding:12px 18px;max-width:1160px;margin:auto;flex-wrap:wrap}
+.logo{font-weight:800;font-size:1.6rem;color:#fff;text-decoration:none}.logo b{color:var(--g3)}
+.nav a.l{color:#e8ffe0;text-decoration:none;font-weight:600;font-size:.9rem}.nav a.l:hover{color:var(--yel)}
+.sp{flex:1}
+.btn{border:0;border-radius:999px;padding:10px 20px;font:700 .9rem Poppins;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.y{background:var(--yel);color:#1f1500}.o{background:var(--g2);color:#fff}.gr{background:var(--g2);color:#fff}.ol{background:transparent;color:#fff;border:2px solid #fff}
+.cartb{position:relative}.cartb span{position:absolute;top:-6px;right:-6px;background:var(--yel);color:#1f1500;border-radius:50%;width:22px;height:22px;font-size:.75rem;display:grid;place-items:center}
+.hero{background:linear-gradient(135deg,#093d20,#0f6b34);color:#fff;padding:64px 0 90px;position:relative;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;font-weight:800}.hero h1 em{color:var(--yel);font-style:normal}
+.hero p{margin:16px 0 24px;font-size:1.05rem;max-width:520px}
+.sb{display:flex;background:#fff;border-radius:999px;padding:6px;max-width:520px;box-shadow:0 10px 30px #0004}
+.sb input{flex:1;border:0;outline:0;padding:0 16px;font:1rem Poppins;background:transparent;color:#10281a;min-width:0}
+.fl{background:#fff;color:#10281a;border-radius:18px;padding:22px;box-shadow:0 16px 40px #0005}.fl h4{margin-bottom:8px;color:#0b4a26}.fl p{display:flex;justify-content:space-between;margin:0;padding:9px 0;border-bottom:1px solid #e3ece0;font-size:.95rem;max-width:none}.fl p b{color:#0b4a26}
+.stats{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}.stats div{background:#ffffff26;border-radius:14px;padding:10px 16px}.stats b{display:block;font-size:1.4rem;color:var(--yel)}
+section{padding:56px 0}
+h2{font-size:1.9rem;font-weight:800;color:var(--g1);margin-bottom:6px}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) h2{color:var(--g3)}}
+:root[data-theme=dark] h2{color:var(--g3)}
+.sub{color:var(--mut);margin-bottom:26px}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px}
+.cat{background:var(--card);border-radius:14px;padding:18px 10px;text-align:center;font-weight:600;color:var(--tx);cursor:pointer;border:1px solid var(--bd);transition:.2s}
+.cat:hover,.cat.on{border-color:var(--g2);box-shadow:0 6px 16px #0b4a2622}.cat.on{background:var(--g1);color:#fff}.cat i{display:block;font-size:2.4rem;font-style:normal}
+.bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.chip{padding:8px 18px;border-radius:999px;border:2px solid var(--g2);background:var(--card);color:var(--tx);font:600 .85rem Poppins;cursor:pointer}
+.chip.on{background:var(--g2);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.pc{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 6px 20px #0a5c2b22;border:1px solid var(--bd);transition:.2s}
+.pc:hover{transform:translateY(-6px);box-shadow:0 14px 28px #0a5c2b40}
+.pi{height:170px;background:var(--bg);overflow:hidden;position:relative}.pi img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}.pc:hover .pi img{transform:scale(1.05)}.ph{display:grid;place-content:center;color:var(--mut);font-weight:600;font-size:.85rem;cursor:pointer;border:2px dashed var(--bd);margin:10px;height:calc(100% - 20px);border-radius:12px;text-align:center}.ph:hover{border-color:var(--g2);color:var(--g2)}
+.tag{position:absolute;top:10px;left:10px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;color:#fff}
+.pb{padding:14px 16px 18px}.pb h3{font-size:1.05rem}.pb small{color:var(--mut);display:block}
+.pr{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.pr b{font-size:1.15rem;color:var(--g2)}
+.fm{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.fc{background:var(--card);border-radius:20px;padding:22px;text-align:center;border:1px solid var(--bd);box-shadow:0 6px 16px #0a5c2b1c}
+.av{width:76px;height:76px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;font-size:2.4rem}
+.vf{display:inline-block;background:var(--g2);color:#fff;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:999px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;counter-reset:s}
+.st{background:var(--card);border-radius:20px;padding:24px;border-top:4px solid var(--g2);position:relative;counter-increment:s}
+
+.st::before{content:counter(s);position:absolute;top:-18px;right:16px;background:var(--g1);color:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.st i{font-size:2.2rem;font-style:normal}
+.ban{background:linear-gradient(120deg,#093d20,#0f6b34);color:#fff;border-radius:20px;padding:36px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ban h2{color:#fff}.ban div{flex:1;min-width:240px}
+footer{background:var(--g1);color:#e8ffe0;padding:40px 0 24px}
+footer .w{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}footer h4{color:var(--yel);margin-bottom:8px}
+.sig{text-align:center;margin-top:26px;padding-top:16px;border-top:1px solid #ffffff33;font-weight:700}.sig b{color:var(--yel);letter-spacing:2px}
+.ov{position:fixed;inset:0;background:#000a;z-index:100;display:none;place-items:center;padding:16px}.ov.s{display:grid}
+.md{background:var(--card);border-radius:24px;padding:26px;width:100%;max-width:440px;max-height:90vh;overflow:auto}
+.md input,.md select{width:100%;padding:11px 14px;margin:6px 0;border:2px solid var(--bd);border-radius:12px;font:1rem Poppins;background:var(--bg);color:var(--tx)}
+.tb{display:flex;gap:8px;margin-bottom:12px}.tb .chip{flex:1}
+.dr{position:fixed;top:0;right:0;bottom:0;width:min(380px,100%);background:var(--card);z-index:110;transform:translateX(105%);transition:.3s;padding:20px;display:flex;flex-direction:column;box-shadow:-8px 0 30px #0006}
+.dr.s{transform:none}.ci{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd)}.ci span:nth-child(2){flex:1}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--g1);color:#fff;padding:12px 22px;border-radius:999px;z-index:200;font-weight:600;display:none;box-shadow:0 8px 24px #0006}
+@media(max-width:760px){.hero .w{grid-template-columns:1fr}.nav a.l{display:none}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="logo" href="#top">🌱 Gidz<b>able</b></a>
+<a class="l" href="#shop">Products</a><a class="l" href="#farmers">Farmers</a><a class="l" href="#how">How it works</a><a class="l" href="#contact">Contact</a>
+<span class="sp"></span>
+<button class="btn ol" onclick="acct()" id="ab">Login</button>
+<button class="btn y" id="rb" onclick="openAuth('reg')">Register</button>
+<button class="btn y" id="addb" style="display:none" onclick="pm(1)">+ Add product</button><button class="btn o cartb" id="cb" onclick="cart(1)">🛒<span id="cc">0</span></button>
+</div></header>
+
+<div class="hero" id="top"><div class="w">
+<div>
+<h1>Fresh from the <em>farm</em>,<br>straight to <em>you</em>.</h1>
+<p>Gidzable connects verified farmers directly with buyers worldwide. Fresh produce, processed goods, fair prices, no middlemen.</p>
+<div class="sb"><input id="q" placeholder="Search tomatoes, gari, palm oil…" oninput="render()"><button class="btn o" onclick="go()">Search</button></div>
+<div class="stats"><div><b>500+</b>Verified farmers</div><div><b>2,000+</b>Products</div><div><b>10</b>Regions</div></div>
+</div>
+<div class="fl"><h4>Today’s fresh picks</h4><p><span>Fresh Tomatoes</span><b>GH₵12/kg</b></p><p><span>Pineapple</span><b>GH₵9/each</b></p><p><span>Yellow Maize</span><b>GH₵6/kg</b></p><p style="border:0"><span>✔ Verified farmers only</span><b>Free sign-up</b></p></div>
+</div></div>
+
+<section><div class="w">
+<h2>Shop by category</h2><p class="sub">Pick a category to jump straight to what you need.</p>
+<div class="cats" id="cats"></div>
+</div></section>
+
+<section id="shop" style="padding-top:0"><div class="w">
+<h2>Featured products</h2><p class="sub">Freshly uploaded by farmers across Ghana.</p>
+<div class="bar">
+<button class="chip on" data-c="all" onclick="cond(this)">All</button>
+<button class="chip" data-c="Unprocessed" onclick="cond(this)">🌿 Unprocessed</button>
+<button class="chip" data-c="Processed" onclick="cond(this)">🏭 Processed</button>
+</div>
+<div class="grid" id="grid"></div>
+</div></section>
+
+<section id="farmers" style="background:var(--card)"><div class="w">
+<h2>Verified farmers</h2><p class="sub">Every seller is checked by our administrators before they can sell.</p>
+<div class="fm" id="fm"></div>
+</div></section>
+
+<section id="how"><div class="w">
+<h2>How Gidzable works</h2><p class="sub">Four simple steps from farm to doorstep.</p>
+<div class="steps">
+<div class="st"><i>🔎</i><h3>Search</h3><p>Browse by category, location or farmer.</p></div>
+<div class="st"><i>🛒</i><h3>Add to cart</h3><p>Choose quantities and checkout securely.</p></div>
+<div class="st"><i>💳</i><h3>Pay safely</h3><p>Payments verified server-side with refund protection.</p></div>
+<div class="st"><i>🚚</i><h3>Get delivery</h3><p>Track your order until it arrives.</p></div>
+</div></div></section>
+
+<section id="selln" style="padding-top:0"><div class="w"><div class="ban">
+<div><h2>Are you a farmer?</h2><p>Register, get verified and list your produce to buyers everywhere. Track orders, sales and earnings from your own dashboard.</p></div>
+<button class="btn y" style="padding:14px 28px;font-size:1rem" onclick="openAuth('reg','Farmer')">Start selling</button>
+</div></div></section>
+
+<footer id="contact"><div class="w">
+<div><a class="logo" href="#top">🌱 Gidz<b>able</b></a><p style="margin-top:8px">The agricultural marketplace connecting farmers directly with buyers worldwide.</p></div>
+<div><h4>Explore</h4><p>Products<br>Farmers<br>How it works<br>FAQ</p></div>
+<div><h4>Support</h4><p>help@gidzable.com<br>Mon–Sat, 8am–6pm<br>Ghana</p></div>
+</div>
+<div class="sig">© 2026 Gidzable · Built by <b>OLIV-TECH</b></div>
+</footer>
+
+<div class="ov" id="ov" onclick="if(event.target===this)this.classList.remove('s')"><div class="md">
+<h2 id="mt" style="font-size:1.5rem">Welcome back</h2>
+<div class="tb"><button class="chip on" id="t1" onclick="tab('Consumer')">🛍️ Consumer</button><button class="chip" id="t2" onclick="tab('Farmer')">👨‍🌾 Farmer</button></div>
+<div id="rf"><input id="fn" placeholder="Full name"><input id="fb" placeholder="Farm / business name" style="display:none"><input placeholder="Country" value="Ghana"><input placeholder="City / district"></div>
+<input type="email" placeholder="Email address" id="em"><input type="password" placeholder="Password">
+<button class="btn o" style="width:100%;margin-top:8px;padding:13px" onclick="auth()" id="sub">Login</button>
+<p style="text-align:center;margin-top:12px;font-size:.9rem"><a href="#" onclick="mode(m==='login'?'reg':'login');return false" id="sw" style="color:var(--g2);font-weight:700">New here? Create an account</a></p>
+<p style="font-size:.75rem;color:var(--mut);margin-top:8px">Demo only: accounts are not stored. The live build uses PHP + MySQL with hashed passwords.</p>
+</div></div>
+<div class="ov" id="pmv" onclick="if(event.target===this)this.classList.remove('s')"><div class="md"><h2 style="font-size:1.5rem">Add a product</h2><p style="font-size:.85rem;color:var(--mut)">Farmer accounts only</p><input id="pn" placeholder="Product name"><select id="pc"><option>Vegetables</option><option>Fruits</option><option>Grains</option><option>Roots &amp; Tubers</option><option>Processed Foods</option></select><select id="pd"><option>Unprocessed</option><option>Processed</option></select><input id="pp" type="number" min="0" placeholder="Price (GH₵)"><input id="pu" placeholder="Unit (kg, bag, crate…)"><input id="pq" type="number" min="0" placeholder="Quantity available"><input id="pf" type="file" accept="image/*"><button class="btn gr" style="width:100%;margin-top:8px;padding:13px" onclick="savep()">Publish product</button></div></div>
+<div class="dr" id="dr"><div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:1.4rem">Your cart</h2><button class="btn ol" style="color:var(--tx);border-color:var(--tx);padding:4px 12px" onclick="cart(0)">✕</button></div>
+<div id="cl" style="flex:1;overflow:auto"></div><div style="font-size:1.2rem;font-weight:800;margin:12px 0">Total: <span id="tot" style="color:var(--org)">GH₵0</span></div>
+<button class="btn gr" style="padding:14px" onclick="checkout()">Checkout</button></div>
+<div class="toast" id="ts"></div>
+
+<script>
+var P=[
+["Fresh Tomatoes","Vegetables","Unprocessed",12,"kg","🍅","Kwame Mensah","#ffd6d6"],
+["Cassava","Roots & Tubers","Unprocessed",8,"kg","🥔","Ama Boateng","#ffe9b8"],
+["Sweet Plantain","Fruits","Unprocessed",15,"bunch","🍌","Yaw Owusu","#fff3a8"],
+["Yellow Maize","Grains","Unprocessed",6,"kg","🌽","Kwame Mensah","#fff0a0"],
+["Fresh Pepper","Vegetables","Unprocessed",10,"kg","🌶️","Efua Asante","#ffcfcf"],
+["Pineapple","Fruits","Unprocessed",9,"each","🍍","Yaw Owusu","#ffefb0"],
+["Gari","Processed Foods","Processed",14,"kg","🥣","Ama Boateng","#f3e4c8"],
+["Palm Oil","Processed Foods","Processed",35,"litre","🛢️","Efua Asante","#ffd0a0"],
+["Groundnut Paste","Processed Foods","Processed",28,"jar","🥜","Efua Asante","#f0d9b5"],
+["Yam","Roots & Tubers","Unprocessed",20,"tuber","🍠","Kofi Danso","#f4cfa0"],
+
+["Fruit Juice","Processed Foods","Processed",18,"bottle","🧃","Ama Boateng","#ffd9a8"],
+["Rice","Grains","Unprocessed",11,"kg","🍚","Kwame Mensah","#f3f3e6"],
+["Fresh Vegetables","Vegetables","Unprocessed",13,"bundle","🥬","Yaw Owusu","#d4f5c0"]];
+var C=[["All","🌾","#bff29a"],["Vegetables","🥬","#a8ecb0"],["Fruits","🍍","#ffe38a"],["Grains","🌽","#ffd27a"],["Roots & Tubers","🥔","#f4cfa0"],["Processed Foods","🥣","#ffc2a0"]];
+var F=[["Kwame Mensah","Ashanti","👨‍🌾","#ffd27a"],["Ama Boateng","Volta","👩‍🌾","#ffb3c7"],["Efua Asante","Central","👩🏾‍🌾","#a8ecb0"],["Kofi Danso","Eastern","🧑🏿‍🌾","#a9d8ff"]];
+var cat="all",cd="all",ct={},IMG={},user=0,ur="",fname="",m="login",role="Consumer";
+function $(i){return document.getElementById(i)}
+function pic(i){var s=IMG[i]||"images/"+P[i][0].toLowerCase().replace(/[^a-z]+/g,"-")+".jpg";return '<img src="'+s+'" alt="'+P[i][0]+'" loading="lazy" onerror="ph(this,'+i+')">'}
+function ph(e,i){var d=document.createElement("div");d.className="ph";d.innerHTML=ur=="Farmer"?"+ Add photo<br><small>click to upload</small>":"Photo coming soon";d.onclick=function(){if(ur=="Farmer")pick(i)};e.replaceWith(d)}
+function pick(i){var f=document.createElement("input");f.type="file";f.accept="image/*";f.onchange=function(){var r=new FileReader();r.onload=function(){IMG[i]=r.result;render();upd()};r.readAsDataURL(f.files[0])};f.click()}
+function render(){
+ var q=$("q").value.toLowerCase(),h="";
+ P.forEach(function(p,i){
+  if((cat!="all"&&p[1]!=cat)||(cd!="all"&&p[2]!=cd)||(q&&(p[0]+p[1]+p[6]).toLowerCase().indexOf(q)<0))return;
+  h+='<div class="pc"><div class="pi">'+pic(i)+'<span class="tag" style="background:'+(p[2]=="Processed"?"#8a5a00":"#15803d")+'">'+p[2]+'</span></div><div class="pb"><h3>'+p[0]+'</h3><small>'+p[1]+' · by '+p[6]+' ✔</small><div class="pr"><b>GH₵'+p[3]+'<small style="display:inline;font-weight:400;color:var(--mut)">/'+p[4]+'</small></b><button class="btn gr" style="padding:8px 14px" onclick="add('+i+')">+ Add</button></div></div></div>'});
+ $("grid").innerHTML=h||'<p>No products found. Try another search.</p>'}
+function init(){
+ $("cats").innerHTML=C.map(function(c){return '<div class="cat'+(c[0]=="All"?" on":"")+'" onclick="setCat(this,\''+c[0]+'\')"><i>'+c[1]+'</i>'+c[0]+'</div>'}).join("");
+ $("fm").innerHTML=F.map(function(f){return '<div class="fc"><div class="av" style="background:var(--bg)">'+f[2]+'</div><h3>'+f[0]+'</h3><p style="color:var(--mut)">'+f[1]+' Region</p><span class="vf">✔ Verified</span></div>'}).join("");
+ render()}
+function setCat(e,c){cat=c=="All"?"all":c;document.querySelectorAll(".cat").forEach(function(x){x.classList.remove("on")});e.classList.add("on");render();$("shop").scrollIntoView()}
+function cond(e){cd=e.dataset.c;document.querySelectorAll(".bar .chip").forEach(function(x){x.classList.remove("on")});e.classList.add("on");render()}
+function go(){render();$("shop").scrollIntoView()}
+function toast(t){var e=$("ts");e.textContent=t;e.style.display="block";clearTimeout(e.t);e.t=setTimeout(function(){e.style.display="none"},2200)}
+function add(i){if(!user){toast("Please log in to buy 🔐");openAuth("login");return}if(ur=="Farmer"){toast("Farmer accounts can’t buy. Use a consumer account.");return}ct[i]=(ct[i]||0)+1;upd();toast(P[i][0]+" added 🛒")}
+function upd(){var n=0,t=0,h="";for(var i in ct){n+=ct[i];t+=ct[i]*P[i][3];h+='<div class="ci"><span style="display:block;flex:none;width:46px;height:46px;border-radius:10px;background:'+(IMG[i]?'url('+IMG[i]+') center/cover':'var(--bg)')+'"></span><span>'+P[i][0]+'<br><small>GH₵'+P[i][3]+' × '+ct[i]+'</small></span><button class="chip" onclick="rm('+i+')">−</button></div>'}
+ $("cc").textContent=n;$("tot").textContent="GH₵"+t;$("cl").innerHTML=h||'<p style="margin-top:16px">Your cart is empty.</p>'}
+function rm(i){if(--ct[i]<1)delete ct[i];upd()}
+function cart(s){$("dr").classList.toggle("s",!!s)}
+function checkout(){if(!Object.keys(ct).length){toast("Cart is empty");return}ct={};upd();cart(0);toast("Order placed! Farmer notified ✅")}
+function openAuth(md,r){mode(md);tab(r||role);$("ov").classList.add("s")}
+function mode(x){m=x;var l=x=="login";$("mt").textContent=l?"Welcome back":"Join Gidzable";$("sub").textContent=l?"Login":"Create account";$("sw").textContent=l?"New here? Create an account":"Have an account? Login";$("rf").style.display=l?"none":"block";$("t1").parentNode.style.display="flex"}
+function tab(r){role=r;$("t1").classList.toggle("on",r=="Consumer");$("t2").classList.toggle("on",r=="Farmer");$("fb").style.display=r=="Farmer"?"block":"none"}
+function auth(){if(!$("em").value){toast("Enter your email");return}user=1;ur=role;fname=($("fn").value||"My Farm");$("ov").classList.remove("s");$("ab").textContent="Logout ("+ur+")";ui();render();toast(m=="login"?"Logged in ✅":"Welcome to Gidzable, "+role.toLowerCase()+"! 🎉")}
+function ui(){var f=ur=="Farmer";$("rb").style.display=user?"none":"";$("selln").style.display=f?"none":"";$("addb").style.display=f?"":"none";$("cb").style.display=f?"none":"";cart(0)}
+function acct(){if(user){user=0;ur="";$("ab").textContent="Login";ui();render();toast("Logged out")}else openAuth("login")}
+function pm(){if(ur!="Farmer"){toast("Only farmers can add products");return}$("pmv").classList.add("s")}
+function savep(){if(ur!="Farmer")return;var n=$("pn").value.trim(),pv=$("pp").value;if(!n||pv===""){toast("Enter product name and price");return}
+P.push([n,$("pc").value,$("pd").value,parseFloat(pv),$("pu").value||"unit","",fname,"",$("pq").value]);
+var i=P.length-1,f=$("pf").files[0];if(f){var r=new FileReader();r.onload=function(){IMG[i]=r.result;render()};r.readAsDataURL(f)}
+["pn","pp","pu","pq","pf"].forEach(function(k){$(k).value=""});$("pmv").classList.remove("s");render();$("shop").scrollIntoView();toast("Product published ✅")}
+init();
+</script>
+</body>
+</html>
